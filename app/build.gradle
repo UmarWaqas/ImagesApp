@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.imagesapp"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+def retrofitVersion = "2.3.0"
+def moshiVersion = "2.3.0"
+def squareOkHttpversion = "3.9.1"
+def stethoVersion = "1.5.0"
+def gsonVersion = "2.3.0"
+def loopjVersion = "1.4.9"
+def interceptor = "3.8.0"
+def glideVersion = "4.12.0"//"4.11.0"
+def circleImageView = "2.2.0"
+def navigationBar = "2.1.0"
+def victor = "1.0.4"
+def RoundCornerProgressBar = "2.0.3"
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    //implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+    /*networks calls */
+    implementation 'com.squareup.retrofit2:converter-gson:' + gsonVersion
+    implementation 'com.loopj.android:android-async-http:' + loopjVersion
+    implementation 'com.facebook.stetho:stetho:' + stethoVersion
+    implementation 'com.facebook.stetho:stetho-okhttp3:' + stethoVersion
+    implementation 'com.squareup.okhttp3:logging-interceptor:' + interceptor
+    implementation 'com.github.bumptech.glide:glide:' + glideVersion
+    // annotationProcessor 'com.github.bumptech.glide:compiler:'+ glideVersion
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.11.0'
+    //implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    implementation 'com.squareup.retrofit2:retrofit:' + retrofitVersion
+    implementation 'com.squareup.retrofit2:converter-moshi:' + moshiVersion
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:' + squareOkHttpversion
+    implementation 'com.squareup.okhttp3:logging-interceptor:' + squareOkHttpversion
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:' + squareOkHttpversion
+
+    /*ui tweaks*/
+    implementation 'de.hdodenhof:circleimageview:' + circleImageView
+   // implementation 'com.victor:lib:' + victor
+    implementation 'com.akexorcist:RoundCornerProgressBar:' + RoundCornerProgressBar
+    implementation 'com.aurelhubert:ahbottomnavigation:' + navigationBar
+    implementation 'com.balysv:material-ripple:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'// ripple effect
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
