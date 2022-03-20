@@ -18,13 +18,14 @@ import com.bumptech.glide.request.transition.Transition
 import com.example.imagesapp.R
 import com.example.imagesapp.views.custom.DialogUtils
 import com.example.imagesapp.views.custom.ScaleImageView
+import com.github.chrisbanes.photoview.PhotoView
 
 class FullImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_full_image)
 
-        val imageview = findViewById<ScaleImageView>(R.id.ivFullImage)
+        val imageview = findViewById<PhotoView>(R.id.ivFullImage)
         intent.extras?.let {
             val url = it.getString("url","")
 
